@@ -1,15 +1,16 @@
 const Hero = ({src}) => {
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white py-20">
-      <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
-        <div className="pb-5 md:pb-0">
+      <div className="pl-6 container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
+        <div className="pb-5">
           <h1 className="text-4xl py-5 my-13 lg:text-6xl">
             Welcome, <br />Manage tasks
              <br />
-            efficiently using <br />Task Supervisor
+            efficiently using <br />Task 
+            <span className="text-gray-900"> Supervisor</span>
           </h1>
 
-          <p className="py-5 text-xl">
+          <p className="pt-2 pb-7 text-lg">
             Task Supervisor allows you to create, read, update, and delete tasks assigned to particular users.
           </p>
 

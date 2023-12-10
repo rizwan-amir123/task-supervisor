@@ -65,23 +65,26 @@ const Add = () => {
       }, [taskState]);
 
     return (
-      <section className="min-h-screen bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white pt-2 pb-20 " id="add_hero">
+      <section className="min-h-screen bg-gradient-to-r from-cyan-500 to-lime-400 px-10 
+      text-white pt-2 pb-20 " id="add_hero">
         <Modal prop={taskState} propfunc={setTask} show_Modal={showModal} set_Modal={setShowModal} />
         <EditModal prop={taskState} propfunc={setTask} showEditModal={show_EditModal} 
             set_ShowEditModal={set_ShowEditModal} index={editIndex}/>
         <div className="container mx-auto grid md:grid-cols-1 items-center justify-center md:justify-between">
-          <h1 className="text-xl pt-5 pb-3 mt-5 lg:text-6xl">
+          <h1 className="text-4xl pt-5 pb-3 mt-5 ">
             Tasks List <br />
           </h1>
-          <div className= "flex mt-3 mb-3 mr-10 pt-2 pb-2">
-            <button onClick={() => setShowModal(true)} className="mr-3 bg-accent border-1 border-cyan text-white 
-            font-semibold shadow-lg rounded-lg px-6 py-3 bg-sky-700 hover:bg-sky-400 ease-linear transition-all duration-150" type="button">
+          <div className= "flex mt-2 mb-3 mr-10 pt-2 pb-2">
+            <button onClick={() => setShowModal(true)} className="mr-3 bg-accent border-1 border-cyan 
+            text-white 
+            font-semibold shadow-lg rounded-lg px-4 py-1.5 bg-sky-700 hover:bg-sky-400 ease-linear 
+            transition-all duration-150" type="button">
             Add
             </button>
             
             
             <button onClick={() => deleteAllTask()} className="bg-accent border-1 border-cyan text-white 
-            font-semibold shadow-lg rounded-lg px-6 py-3 bg-sky-700 hover:bg-sky-400" type="button">
+            font-semibold shadow-lg rounded-lg px-4 py-1.5 bg-sky-700 hover:bg-sky-400" type="button">
             Remove All
             </button>
           </div>
@@ -105,9 +108,9 @@ const Add = () => {
                     <p>{task.status}</p>
                     <div className="flex justify-between">
                       <button onClick={() => editTask(i)} className="bg-accent border-1 border-cyan text-white 
-            font-semibold shadow-lg w-20 h-10 rounded-lg px-3 py-1 bg-sky-700 hover:bg-sky-400">Edit</button>
+            font-semibold shadow-lg w-20 h-10 rounded-lg px-3 py-1.5 bg-sky-700 hover:bg-sky-400">Edit</button>
                       <button onClick={() => deleteDBTask(i)} className="bg-accent border-1 border-cyan text-white 
-            font-semibold shadow-lg w-1/2 h-10 rounded-lg px-1 py-1 bg-sky-700 hover:bg-sky-400">Remove</button>
+            font-semibold shadow-lg w-1/2 h-10 rounded-lg px-1 py-1.5 bg-sky-700 hover:bg-sky-400">Remove</button>
                     </div>
                   </div>
             );
