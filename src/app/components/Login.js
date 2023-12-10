@@ -41,25 +41,31 @@ export default function Login({src}) {
     }
 
     return (
-    <section className="min-h-screen bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white py-32" id="login">
+    <section className="min-h-screen bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white pt-32" id="login">
     <div className="grid md:grid-cols-2 items-center justify-center md:justify-between">
     <form className="px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
-        <label className="block text-lg font-semibold text-blue-950 
+        <label className="block text-md font-semibold text-blue-950 
             mb-2" htmlFor="emailLogin">
             Email
         </label>
-        <input className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+        <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+        focus:ring-blue-500 focus:border-blue-500 block w-2/3 p-2.5 dark:bg-gray-700 
+        dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
+        dark:focus:border-blue-500" 
         id="emailLogin" type="text" placeholder="abc@xyz.com" value={emailLogin}
         onChange={(e) => handleEmailLoginInput(e)}>
         </input>
         </div>
         <div className="mb-6">
-        <label className="block text-lg font-semibold text-blue-950 
+        <label className="block text-md font-semibold text-blue-950 
              mb-2" htmlFor="passwordLogin">
             Password
         </label>
-        <input className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+        <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+        focus:ring-blue-500 focus:border-blue-500 block w-2/3 p-2.5 dark:bg-gray-700 
+        dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
+        dark:focus:border-blue-500" 
         id="passwordLogin" type="password" placeholder="*****" value={passwordLogin}
         onChange={(e) => handlePasswordLoginInput(e)}>
         </input>
@@ -69,12 +75,12 @@ export default function Login({src}) {
             font-semibold shadow-lg rounded-lg px-6 py-3 bg-sky-700 hover:bg-sky-400" type="button">
             Sign In
         </button>
-        <a className="ml-10 pl-3 inline-block align-baseline font-bold text-md text-blue-950 hover:text-blue-800" href="#">
+        <a className="inline-block align-baseline font-bold text-md text-blue-950 hover:text-blue-800" href="#">
             Forgot Password?
         </a>
         </div>
         <div className="flex">
-        <p className="text-center text-gray-700 my-4 text-md justify-center">
+        <p className="text-center text-gray-700 my-4 text-sm justify-center">
         Not a member yet? <a className="text-blue-950 underline font-semibold" href="/signup">Sign Up</a> here.
         </p>
         </div>

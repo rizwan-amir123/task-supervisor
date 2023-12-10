@@ -6,12 +6,12 @@ const Hero = ({src}) => {
           <h1 className="text-4xl py-5 my-13 lg:text-6xl">
             Welcome, <br />Manage tasks
              <br />
-            efficiently using <br />Task 
-            <span className="text-gray-900"> Supervisor</span>
+            efficiently using <br /> 
+            <span className="text-gray-900 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_70%)]">  Task Supervisor</span>
           </h1>
 
           <p className="pt-2 pb-7 text-lg">
-            Task Supervisor allows you to create, read, update, and delete tasks assigned to particular users.
+            Task supervisor allows you to create, read, update, and delete tasks assigned to particular users.
           </p>
 
           <a

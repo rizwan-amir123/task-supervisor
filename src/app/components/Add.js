@@ -106,11 +106,11 @@ const Add = () => {
                     <p>{task.assignee}</p>
                     <p>{task.tag}</p>
                     <p>{task.status}</p>
-                    <div className="flex justify-between">
+                    <div className="flex gap-x-2">
                       <button onClick={() => editTask(i)} className="bg-accent border-1 border-cyan text-white 
-            font-semibold shadow-lg w-20 h-10 rounded-lg px-3 py-1.5 bg-sky-700 hover:bg-sky-400">Edit</button>
+            font-semibold shadow-lg rounded-lg py-1 px-3 text-sm bg-sky-700 hover:bg-sky-400">Edit</button>
                       <button onClick={() => deleteDBTask(i)} className="bg-accent border-1 border-cyan text-white 
-            font-semibold shadow-lg w-1/2 h-10 rounded-lg px-1 py-1.5 bg-sky-700 hover:bg-sky-400">Remove</button>
+            font-semibold shadow-lg rounded-lg py-1 px-3 text-sm bg-sky-700 hover:bg-sky-400">Remove</button>
                     </div>
                   </div>
             );
