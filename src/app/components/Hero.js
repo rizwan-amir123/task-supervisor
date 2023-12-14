@@ -3,17 +3,24 @@ const Hero = ({src}) => {
     <section className="bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white py-20">
       <div className="pl-6 container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
         <div className="pb-5">
-          <h1 className="text-4xl py-5 my-13 lg:text-6xl">
+          <h1 className="text-4xl pt-5 mt-13 lg:text-6xl">
             Welcome, <br />Manage tasks
              <br />
             efficiently using <br /> 
-            <span className="text-gray-900 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_70%)]">  Task Supervisor</span>
+            
           </h1>
 
-          <p className="pt-2 pb-7 text-lg">
+          <div className="w-max mb-3">
+            <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 
+            border-r-white pr-5 text-5xl text-gray-900 font-semibold">
+              task supervisor
+            </h1>
+          </div>
+
+          <p className="pt-2 pb-7 text-lg text-slate-100">
             Task supervisor allows you to create, read, update, and delete tasks assigned to particular users.
           </p>
-
+          
           <a
             href="/main"
             className="bg-accent border-1 border-cyan text-white 

@@ -8,10 +8,11 @@ return (
       <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">task supervisor</span>
   </a>
   <div className="flex items-center justify-center space-x-5">
-  <a href="/login" className="text-md font-medium dark:text-white hover:font-bold">Login
+  <a href="/login" className="text-md font-medium dark:text-white hover:shadow-lg 
+  hover:font-extrabold">Login
   </a>
   <span>    </span>
-  <a href="/signup" className="text-md pr-10 font-medium dark:text-white hover:font-bold">Sign Up
+  <a href="/signup" className="text-md pr-10 font-medium dark:text-white hover:font-extrabold">Sign Up
   </a>
   </div>
   </div>
