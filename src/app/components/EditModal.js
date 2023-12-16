@@ -1,6 +1,6 @@
 import { useState } from "react";
 export default function EditModal({prop, propfunc, showEditModal, set_ShowEditModal, index}) {
-    const [id, setId] = useState("");
+    const [id, setId] = useState("hell");
     const [task, setTaskDescr] = useState("");
     const [assignee, setAssignee] = useState("");
     const [tag, setTag] = useState("");
