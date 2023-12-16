@@ -47,7 +47,7 @@ export default function Modal({prop, propfunc, show_Modal, set_Modal}) {
         tag: tag,
         status: status
       };
-      const response = await fetch("http://localhost:8000/task/", {
+      const response = await fetch("https://crud-api-six.vercel.app/task/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

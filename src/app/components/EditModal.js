@@ -47,7 +47,7 @@ export default function EditModal({prop, propfunc, showEditModal, set_ShowEditMo
           tag: tag,
           status: status })
       };
-      fetch("http://localhost:8000/task/" + otherindex, requestOptions)
+      fetch("https://crud-api-six.vercel.app/task/" + otherindex, requestOptions)
         .then(response => response.json())
         .then(data => {
           const newTasks = [...prop];

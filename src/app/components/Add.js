@@ -8,7 +8,7 @@ const Add = () => {
     const deleteDBTask = (i) => {
       const p = taskState[i];
       const index = p._id;
-      fetch("http://localhost:8000/task/"+index, {
+      fetch("https://crud-api-six.vercel.app/task/"+index, {
       method: 'DELETE',
       headers: {
         "content-type": "application/json",
@@ -56,7 +56,7 @@ const Add = () => {
     const [editIndex, setEditIndex] = useState(0);
 
     const fetchInfo = () => { 
-      return fetch("http://localhost:8000/task/") 
+      return fetch("https://crud-api-six.vercel.app/task/") 
               .then((res) => res.json()) 
               .then((d) => setTask(d)) 
       }
