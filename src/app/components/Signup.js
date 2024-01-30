@@ -1,6 +1,9 @@
 "use client"
-import { useState } from "react";
+//import { redirect } from 'next/navigation';
+import { useState, useEffect } from "react";
+
 export default function SignUp({src}) {
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -30,6 +33,34 @@ export default function SignUp({src}) {
       };
       getData();
     }
+
+    const handleGithubLogin = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/auth/github');
+        if (response.ok) {
+          window.location.href = data.redirect;
+        } else {
+          console.error('Error during login:', response.status, data);
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+      }
+    };
+      /*
+      const getData = async() => {
+        const response = await fetch("http://localhost:8080/auth/github")
+        .catch((e) => console.log(e));
+        //console.log(response.json());
+        //return response.json();
+        //return 
+      };
+      getData();
+      */
+      //window.location.href = 'http://localhost:8080/auth/github';
+      //console.log("hello");
+    
+     //redirect('https://github.com/login/oauth/authorize?client_id=88da0cb4bb8c367f0417&redirect_uri=http://localhost:8080/oauth/redirect');
+    //}
     const handleSubmit = () => {
         if (name === "" || email === "" || password === "" || confirmPassword === "") {
           alert("A field value is empty");
@@ -56,6 +87,7 @@ export default function SignUp({src}) {
     }
     return (
     <section className="bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white pt-5" id="login">
+      
     <div className="grid md:grid-cols-2 items-center justify-center md:justify-between">
     <form className="px-8 pt-10 pb-8 mb-4">
         <div className="mb-4">
@@ -117,6 +149,19 @@ export default function SignUp({src}) {
         <img className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
         <span>Login with Google</span>
         </button>
+
+        <a href=""></a>
+
+        <button onClick={() => handleGithubLogin()} className="flex gap-2 border-1 bg-accent border-1 border-cyan text-white 
+            font-semibold shadow-lg rounded-lg px-6 py-3 bg-sky-700 hover:bg-sky-400 transition duration-150">
+        <img className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
+        <span>Login with Github</span>
+        </button>
+
+        <a href="http://localhost:8080/auth/github" className="flex items-center">
+        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">git</span>
+        </a>
+        
         </div>
         <p className="text-gray-700 mt-4 mx-auto text-sm">
     By signing up, you agree to the <a className="text-blue-950 underline font-semibold" href="/#">Terms of Service and Privacy Policy </a>

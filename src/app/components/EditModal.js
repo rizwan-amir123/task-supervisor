@@ -1,65 +1,81 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function EditModal({prop, propfunc, showEditModal, set_ShowEditModal, index}) {
-    const [id, setId] = useState("hell");
-    const [task, setTaskDescr] = useState("");
-    const [assignee, setAssignee] = useState("");
-    const [tag, setTag] = useState("");
-    const [status, setStatus] = useState("");
+  const [id, setId] = useState("");
+  const [task, setTaskDescr] = useState("");
+  const [assignee, setAssignee] = useState("");
+  const [tag, setTag] = useState("");
+  const [status, setStatus] = useState("");
+  /*
+  useEffect(() => {
+    const p = prop[index];
+    const otherindex = p._id;
+    fetch("https://crud-api-six.vercel.app/task/" + otherindex)
+      .then(response => response.json())
+      .then(data => {
+        setId(data.id);
+        setTaskDescr(data.title);
+        setAssignee(data.assignee);
+        setTag(data.tag);
+        setStatus(data.status);
+    })}, [showEditModal]);
+    */
 
-    
-    const handleIdInput = (e) => {
-      setId(e.target.value);
-    };
-    const handleTaskInput = (e) => {
-      setTaskDescr(e.target.value);
-    };
-    const handleAssigneeInput = (e) => {
-        setAssignee(e.target.value);
-    };
-    const handleTagInput = (e) => {
-        setTag(e.target.value);
-    };
-    const handleStatusInput = (e) => {
-        setStatus(e.target.value);
-    };
-    const handleClear = (e) => {
-        setStatus("");
-        setTag("");
-        setAssignee("");
-        setTaskDescr("");
-        setId("");
-    };
-    const handleDBEdit = () => {
-      if (task === "" || id === "" || tag === "" || status === "" || assignee === "") {
-        alert("One or more field values is empty");
-        return;
-      }
-      const p = prop[index];
-      const otherindex = p._id;
+  
 
-      const requestOptions = {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          id: id,
-          title: task,
-          assignee: assignee,
-          tag: tag,
-          status: status })
-      };
-      fetch("https://crud-api-six.vercel.app/task/" + otherindex, requestOptions)
-        .then(response => response.json())
-        .then(data => {
-          const newTasks = [...prop];
-          const t = newTasks[index];
-          t.id = id;
-          t.title = task;
-          t.assignee = assignee;
-          t.tag = tag;
-          t.status = status;
-          propfunc(newTasks);
-    });
+  
+  const handleIdInput = (e) => {
+    setId(e.target.value);
+  };
+  const handleTaskInput = (e) => {
+    setTaskDescr(e.target.value);
+  };
+  const handleAssigneeInput = (e) => {
+      setAssignee(e.target.value);
+  };
+  const handleTagInput = (e) => {
+      setTag(e.target.value);
+  };
+  const handleStatusInput = (e) => {
+      setStatus(e.target.value);
+  };
+  const handleClear = (e) => {
+      setStatus("");
+      setTag("");
+      setAssignee("");
+      setTaskDescr("");
+      setId("");
+  };
+  const handleDBEdit = () => {
+    if (task === "" || id === "" || tag === "" || status === "" || assignee === "") {
+      alert("One or more field values is empty");
+      return;
+    }
+    const p = prop[index];
+    const otherindex = p._id;
+
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        id: id,
+        title: task,
+        assignee: assignee,
+        tag: tag,
+        status: status })
     };
+    fetch("https://crud-api-six.vercel.app/task/" + otherindex, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        const newTasks = [...prop];
+        const t = newTasks[index];
+        t.id = id;
+        t.title = task;
+        t.assignee = assignee;
+        t.tag = tag;
+        t.status = status;
+        propfunc(newTasks);
+  });
+  };
 
 
   return (

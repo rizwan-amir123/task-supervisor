@@ -1,6 +1,6 @@
 const Hero = ({src}) => {
   return (
-    <section className="bg-gradient-to-r from-cyan-500 to-lime-400 px-5 text-white py-20">
+    <section className="bg-gradient-to-r from-cyan-500 to-lime-400 px-3 text-white py-13">
       <div className="pl-6 container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
         <div className="pb-5">
           <h1 className="text-4xl pt-5 mt-13 lg:text-6xl">
@@ -32,6 +32,7 @@ const Hero = ({src}) => {
         <div className="hero-img">
           <img
             src={src.src}
+            
             alt="coding illustration"
             className="lgw-[90%] ml-auto"
           />
