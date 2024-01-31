@@ -8,12 +8,15 @@ return (
       <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">task supervisor</span>
   </a>
   <div className="flex items-center justify-center space-x-5">
-  <a href="/login" className="text-md font-medium dark:text-white hover:shadow-lg 
-  hover:font-extrabold">Login
+  <a href="/login" className="text-md rounded-lg py-1 px-3 border-solid border-white border-2 font-medium 
+  hover:bg-gradient-to-r from-cyan-500 to-lime-400 transition ease-in duration-200
+  hover:text-gray-900">Login
   </a>
   <span>    </span>
-  <a href="/signup" className="text-md pr-10 font-medium dark:text-white hover:font-extrabold">Sign Up
+  
+  {/*<a href="/signup" className="text-md pr-10 font-medium dark:text-white hover:font-extrabold">Sign Up
   </a>
+*/}
   </div>
   </div>
 </nav>

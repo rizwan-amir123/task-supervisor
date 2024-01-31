@@ -1,7 +1,8 @@
 const Hero = ({src}) => {
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-lime-400 px-3 text-white py-13">
-      <div className="pl-6 container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
+      <div className="pl-6 container mx-auto grid md:grid-cols-2 items-center justify-center 
+      md:justify-between">
         <div className="pb-5">
           <h1 className="text-4xl pt-5 mt-13 lg:text-6xl">
             Welcome, <br />Manage tasks
