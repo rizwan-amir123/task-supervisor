@@ -8,6 +8,7 @@ const Add = () => {
     const [showTagDropDown, setShowTagDropDown] = useState(false);
     const [showStatusDropDown, setShowStatusDropDown] = useState(false);
     const [showAssigneeDropDown, setShowAssigneeDropDown] = useState(false);
+    const [assignees, setAssignees] = useState([]);
 
     const deleteDBTask = (i) => {
       const p = taskState[i];
@@ -64,8 +65,17 @@ const Add = () => {
               .then((res) => res.json()) 
               .then((d) => setTask(d)) 
     }
+
+    const fetchAssignees = () => { 
+      return fetch("https://crud-api-six.vercel.app/assignees/") 
+              .then((res) => res.json()) 
+              .then((d) => {setAssignees(d)}) 
+    }
+
     useEffect(() => {
         fetchInfo();
+        fetchAssignees();
+        //console.log("assignees:", assignees)
     }, []);
 
     const handleInputChange = (e) => {
@@ -102,6 +112,13 @@ const Add = () => {
 
     const handleTagFilterCall = (e) => {
       const link = "https://crud-api-six.vercel.app/task/tag/" + e.target.value;
+      return fetch(link) 
+            .then((res) => res.json()) 
+            .then((d) => setTask(d))
+    };
+
+    const handleAssigneeFilterCall = (e) => {
+      const link = "https://crud-api-six.vercel.app/assignee/" + e.target.value + "/tasks/";
       return fetch(link) 
             .then((res) => res.json()) 
             .then((d) => setTask(d))
@@ -172,6 +189,12 @@ const Add = () => {
                 <option value="devops">Devops</option>
               </select> : null
               }
+              { showAssigneeDropDown ? 
+              <select onChange={handleAssigneeFilterCall} className="py-1 px-2 bg-gray-300 text-gray-900 text-sm" id="tag">
+                { assignees.map((val, index) => { return (<option key= {index} 
+                value={val}>{val}</option>) }) }
+              </select> : null
+              }
               </div>
             </div>
           </div>
@@ -204,7 +227,7 @@ const Add = () => {
           <tbody>
             {taskState.map((task, i) => {
               return (<tr key={i} className="group odd:bg-emerald-400 even:bg-cyan-400 even:hover:bg-cyan-800 
-              hover:text-white border-b text-gray-900 odd:hover:bg-emerald-800">
+              hover:text-white border-b text-gray-900 odd:hover:bg-emerald-800 transition ease-in duration-200">
                 <th scope="row" className="px-6 py-4 font-medium  
                 whitespace-nowrap">
                     {task.id}
